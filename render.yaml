@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: g-one-ai-gaming
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.5-flash-lite
+      - key: G_ONE_AI_API_KEY
+        sync: false
